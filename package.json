@@ -1,0 +1,47 @@
+{
+  "name": "protolog",
+  "version": "1.0.0",
+  "description": "Lab protocol manager with versioning, comments, and sharing",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build-win": "electron-builder --win --x64"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.0.0"
+  },
+  "build": {
+    "appId": "com.protolog.app",
+    "productName": "Protolog",
+    "icon": "src/icon.ico",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "src/icon.ico",
+      "requestedExecutionLevel": "asInvoker"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Protolog",
+      "installerIcon": "src/icon.ico",
+      "uninstallerIcon": "src/icon.ico",
+      "installerHeaderIcon": "src/icon.ico",
+      "deleteAppDataOnUninstall": false
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamescooperkirk/protolog.git"
+  },
+  "author": "James Cooper Kirk"
+}
